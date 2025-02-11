@@ -1,0 +1,32 @@
+[user]
+	name = <YOUR-NAME>
+	email = <YOUR-EMAIL>
+  signingkey = <YOUR-GPG-KEY>
+
+[gpg]
+  format = openpgp
+  program = /usr/local/bin/gpg
+  #format = ssh
+[commit]
+  gpgsign = true
+	template = ~/.stCommitMsg
+[tag]
+  gpgSign = true
+[log]
+	showSignature = true
+[init]
+  defaultBranch = main
+[ghq]
+ #https://github.com/x-motemen/ghq
+  vcs = git
+  root = ~/projects
+
+[core]
+  excludesfile = ~/.gitignore_global
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
